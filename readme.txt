@@ -1,4 +1,4 @@
-=== Traffic Torch AI GEO and SEO Tools for WP ===
+=== Traffic Torch AI GEO and SEO Tools ===
 Contributors: yliacallan
 Tags: seo, ai-seo, geo, aeo, ux-audit
 Requires at least: 6.5
@@ -8,7 +8,7 @@ Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Instant access to Traffic Torch AI, GEO & SEO tools directly from the WordPress Block Editor. 
+Instant access to Traffic Torch AI, GEO & SEO tools directly from the Gutenberg editor sidebar.
 
 == Description ==
 
@@ -55,10 +55,11 @@ Yes. The plugin is licensed under GPLv2 and can be used on unlimited sites.
 
 == Screenshots ==
 
-1. Traffic Torch panel in the Gutenberg editor sidebar.
-2. Launching a tool with automatic URL pre-fill.
-3. Recommended Plugins tab with Quick Links.
-4. Help Guides tab with educational cards.
+1. Traffic Torch panel in the Gutenberg editor sidebar with tool selector and Help Guides button.
+2. Traffic Torch educational admin dashboard with Welcome, All Tools, Help Guides, Recommended Plugins.
+3. SEO Intent Tool audit results shown after launching from the editor.
+4. 360° SEO + UX Health Radar chart from the SEO UX Tool.
+5. Keyword research tool interface in dark mode.
 
 == Changelog ==
 
