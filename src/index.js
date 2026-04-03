@@ -8,7 +8,7 @@ import { __ } from '@wordpress/i18n';
 const TrafficTorchPanel = () => {
     const [selectedTool, setSelectedTool] = useState('seo-intent-tool');
 
-    // Clean single list of all tools (in your preferred order)
+    // Clean single list of all tools
     const allTools = [
         { label: '🎯 SEO Intent Tool', slug: 'seo-intent-tool', baseUrl: 'https://traffictorch.net/seo-intent-tool/' },
         { label: '🧬 SEO Entity Extractor Tool', slug: 'seo-entity-extractor-tool', baseUrl: 'https://traffictorch.net/seo-entity-extractor-tool/' },
@@ -34,18 +34,15 @@ const TrafficTorchPanel = () => {
     const launchTool = () => {
         const tool = allTools.find( t => t.slug === selectedTool );
         if ( !tool || !previewUrl ) {
-            alert( __( 'Please save the post first to generate a preview or live URL.', 'traffictorch' ) );
+            alert( __( 'Please save the post first to generate a preview or live URL.', 'traffic-torch-ai-geo-and-seo-tools' ) );
             return;
         }
-
         let finalUrl = tool.baseUrl;
         const separator = finalUrl.includes('?') ? '&' : '?';
         finalUrl += `${separator}url=${encodeURIComponent( previewUrl )}`;
-
         if ( selectedTool === 'seo-ux-tool' ) {
             finalUrl += '#seo-ux-tool';
         }
-
         const newTab = window.open( finalUrl, '_blank' );
         if ( newTab ) {
             setTimeout( () => { try { newTab.focus(); } catch ( e ) {} }, 800 );
@@ -59,12 +56,12 @@ const TrafficTorchPanel = () => {
     return (
         <PluginDocumentSettingPanel
             name="traffictorch-panel"
-            title={ __( '🚥 Traffic Torch AI GEO & SEO Audit Toolkit', 'traffictorch' ) }
+            title={ __( '🚥 Traffic Torch AI GEO & SEO Audit Toolkit', 'traffic-torch-ai-geo-and-seo-tools' ) }
             icon="dashicons-chart-bar"
         >
             <PanelRow>
                 <SelectControl
-                    label={ __( 'Select Tool', 'traffictorch' ) }
+                    label={ __( 'Select Tool', 'traffic-torch-ai-geo-and-seo-tools' ) }
                     value={ selectedTool }
                     options={ allTools.map( tool => ({
                         label: tool.label,
@@ -74,7 +71,7 @@ const TrafficTorchPanel = () => {
                     help="URL will be pre-filled where supported."
                 />
             </PanelRow>
-            
+
             { previewUrl && (
                 <small style={{ display: 'block', marginTop: '16px', color: '#64748b', fontSize: '13px' }}>
                     URL ready: { previewUrl.substring(0, 65) }...
@@ -88,11 +85,11 @@ const TrafficTorchPanel = () => {
                     onClick={ launchTool }
                     style={{ backgroundColor: '#10b981', color: '#ffffff', fontWeight: '600' }}
                 >
-                    { __( 'Launch Tool with Preview/Live URL →', 'traffictorch' ) }
+                    { __( 'Launch Tool with Preview/Live URL →', 'traffic-torch-ai-geo-and-seo-tools' ) }
                 </Button>
             </HStack>
 
-            {/* Help Guides Button - Moved to the bottom */}
+            {/* Help Guides Button - at the bottom */}
             <HStack justify="flex-start" style={{ marginTop: '12px' }}>
                 <Button
                     variant="secondary"
@@ -102,7 +99,6 @@ const TrafficTorchPanel = () => {
                     📋 Help Guides
                 </Button>
             </HStack>
-
         </PluginDocumentSettingPanel>
     );
 };
