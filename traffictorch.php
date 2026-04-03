@@ -11,7 +11,7 @@
  * Author URI:        https://traffictorch.net
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       traffictorch
+ * Text Domain:       traffic-torch-ai-geo-and-seo-tools
  */
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
