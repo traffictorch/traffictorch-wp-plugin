@@ -71,8 +71,8 @@ function traffictorch_admin_menu() {
     add_submenu_page( 'traffictorch', 'All Tools',          'All Tools',          'manage_options', 'traffictorch&tab=tools',    '__return_null' );
     add_submenu_page( 'traffictorch', 'Help Guides',       'Help Guides',       'manage_options', 'traffictorch&tab=help',     '__return_null' );
     add_submenu_page( 'traffictorch', 'Recommended Plugins', 'Plugins',         'manage_options', 'traffictorch&tab=plugins',  '__return_null' );
-    add_submenu_page( 'traffictorch', 'Pro Traffic',       'Pro Traffic',       'manage_options', 'traffictorch&tab=pro',      '__return_null' );
     add_submenu_page( 'traffictorch', 'Support',           'Support',           'manage_options', 'traffictorch&tab=support',  '__return_null' );
+    add_submenu_page( 'traffictorch', 'Pro Traffic',       'Pro Traffic',       'manage_options', 'traffictorch&tab=pro',      '__return_null' );
 }
 add_action( 'admin_menu', 'traffictorch_admin_menu' );
 
