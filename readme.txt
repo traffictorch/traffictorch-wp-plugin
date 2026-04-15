@@ -1,5 +1,5 @@
 === Traffic Torch AI GEO and SEO Tools ===
-Contributors: yliacallan
+Contributors: yliacallan, traffictorch
 Tags: seo, ai-seo, geo, aeo, ux-audit
 Requires at least: 6.5
 Tested up to: 6.9

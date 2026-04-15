@@ -8,7 +8,7 @@
  * Tested up to:      6.9
  * Requires PHP:      8.0
  * Author:            Ylia Callan
- * Author URI:        https://traffictorch.net
+ * Author URI:        https://yliacallan.github.io
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       traffic-torch-ai-geo-and-seo-tools
@@ -76,9 +76,22 @@ function traffictorch_admin_menu() {
 }
 add_action( 'admin_menu', 'traffictorch_admin_menu' );
 
+// Enqueue admin styles properly
+function traffictorch_admin_styles() {
+    wp_add_inline_style( 'wp-admin', '
+        .traffictorch-admin-page .nav-tab-wrapper { border-bottom: 1px solid #e2e8f0; }
+        .traffictorch-admin-page .nav-tab { font-size: 15px; padding: 12px 20px; }
+        @media (prefers-color-scheme: dark) {
+            .traffictorch-admin-page { color: #e2e8f0; }
+            .traffictorch-admin-page h2, h3 { color: #cbd5e1; }
+        }
+    ' );
+}
+add_action( 'admin_enqueue_scripts', 'traffictorch_admin_styles' );
+
 // Main tabbed admin page (Welcome + all sections)
 function traffictorch_main_page() {
-    $active_tab = isset( $_GET['tab'] ) ? sanitize_text_field( $_GET['tab'] ) : 'welcome';
+    $active_tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : 'welcome';
     ?>
     <div class="wrap traffictorch-admin-page" style="max-width: 1100px; margin: 20px auto;">
 
@@ -744,13 +757,5 @@ function traffictorch_main_page() {
 <?php endif; ?>
     </div>
 
-    <style>
-        .traffictorch-admin-page .nav-tab-wrapper { border-bottom: 1px solid #e2e8f0; }
-        .traffictorch-admin-page .nav-tab { font-size: 15px; padding: 12px 20px; }
-        @media (prefers-color-scheme: dark) {
-            .traffictorch-admin-page { color: #e2e8f0; }
-            .traffictorch-admin-page h2, h3 { color: #cbd5e1; }
-        }
-    </style>
     <?php
 }
