@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Traffic Torch AI GEO and SEO Tools
+ * Plugin Name:       traffic-torch-ai-geo-and-seo-tools
  * Plugin URI:        https://traffictorch.net
  * Description:       Adds a clean Traffic Torch AI, GEO & SEO audit toolkit panel in the Gutenberg editor sidebar. One-click launch with automatic preview/live URL pre-fill. 
  * Version:           1.0.0
